@@ -146,7 +146,7 @@ const PremiumHub: React.FC = () => {
           <h2 className="text-5xl md:text-6xl font-black text-gray-950 dark:text-white tracking-tighter leading-tight">
             Advanced Creator Utilities
           </h2>
-          <p className="text-xl text-gray-800 dark:text-gray-200 max-w-3xl mx-auto font-bold leading-relaxed">
+          <p className="text-xl text-gray-800 dark:text-gray-100 max-w-3xl mx-auto font-bold leading-relaxed">
             Specialized logic tools for analytics, parsing, and management. 
             Runs 100% locally for zero-latency privacy.
           </p>
@@ -186,7 +186,7 @@ const PremiumHub: React.FC = () => {
                   >
                     <div className="space-y-3">
                       <h4 className="font-black text-gray-950 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-tight text-lg">{tool.name}</h4>
-                      <p className="text-[13px] text-gray-800 dark:text-gray-300 font-bold leading-relaxed">{tool.desc}</p>
+                      <p className="text-[13px] text-gray-800 dark:text-gray-100 font-bold leading-relaxed">{tool.desc}</p>
                     </div>
                     <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
                       <span className="text-[11px] font-black text-blue-700 dark:text-blue-300 uppercase tracking-widest bg-blue-50 dark:bg-blue-900/30 px-3 py-1 rounded-lg">Launch</span>
@@ -213,7 +213,7 @@ const PremiumHub: React.FC = () => {
             ← Back to Premium Toolkit
           </button>
           <h2 className="text-5xl font-black text-gray-950 dark:text-white tracking-tight leading-none">{selectedTool.name}</h2>
-          <p className="text-xl text-gray-800 dark:text-gray-200 font-bold">{selectedTool.desc}</p>
+          <p className="text-xl text-gray-800 dark:text-gray-100 font-bold">{selectedTool.desc}</p>
         </div>
         <div className="flex items-center gap-3 px-6 py-3 bg-blue-600 text-white rounded-[2rem] shadow-2xl shadow-blue-200 dark:shadow-none">
           <span className="text-2xl">🛡️</span>

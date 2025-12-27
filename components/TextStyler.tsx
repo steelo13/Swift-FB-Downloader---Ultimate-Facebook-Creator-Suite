@@ -23,58 +23,60 @@ const TextStyler: React.FC = () => {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
-      <div className="text-center space-y-2">
-        <h2 className="text-3xl font-bold text-gray-900">Facebook Text Styler</h2>
-        <p className="text-gray-600">Create bold or stylized text for your Facebook posts that grabs attention.</p>
+    <div className="max-w-4xl mx-auto space-y-10 animate-in fade-in duration-500">
+      <div className="text-center space-y-4">
+        <h2 className="text-5xl font-black text-gray-950 dark:text-white tracking-tighter">Facebook Text Styler</h2>
+        <p className="text-xl text-gray-800 dark:text-gray-200 font-bold max-w-2xl mx-auto">Create bold or stylized text for your Facebook posts that grabs attention. 100% platform compatible.</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
-          <label className="block text-sm font-bold text-gray-700 mb-2">Your Text</label>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="bg-white dark:bg-gray-900 p-8 rounded-[2.5rem] shadow-2xl border border-gray-100 dark:border-gray-800">
+          <label className="block text-[11px] font-black text-gray-600 dark:text-gray-300 uppercase tracking-widest mb-4">Input Message</label>
           <textarea
-            className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-blue-500 h-64 text-lg"
+            className="w-full p-6 bg-gray-50 dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-3xl outline-none focus:border-blue-600 dark:focus:border-blue-500 h-72 text-xl font-bold text-gray-950 dark:text-white transition-all placeholder:text-gray-400"
             placeholder="Type your message here..."
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
-          <div className="mt-4 flex gap-2">
+          <div className="mt-6 flex gap-4">
             <button 
               onClick={() => setText('')}
-              className="px-4 py-2 text-sm text-gray-500 hover:text-gray-800"
+              className="px-6 py-3 text-xs font-black text-gray-600 dark:text-gray-400 hover:text-red-500 dark:hover:text-red-400 uppercase tracking-widest transition-colors"
             >
-              Clear
+              Clear Workspace
             </button>
           </div>
         </div>
 
-        <div className="space-y-4">
+        <div className="space-y-6">
           {results.map((res, i) => (
-            <div key={i} className="bg-white p-4 rounded-xl border border-gray-200 hover:shadow-md transition-shadow">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-xs font-bold text-gray-400 uppercase tracking-wider">{res.label}</span>
+            <div key={i} className="bg-white dark:bg-gray-900 p-6 rounded-2xl border-2 border-gray-50 dark:border-gray-800 hover:border-blue-600 dark:hover:border-blue-400 transition-all shadow-lg">
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-[11px] font-black text-gray-600 dark:text-gray-400 uppercase tracking-widest">{res.label}</span>
                 <button 
                   disabled={!text}
                   onClick={() => copyToClipboard(res.value)}
-                  className="text-blue-600 text-xs font-bold hover:underline disabled:opacity-30"
+                  className="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 px-4 py-1.5 rounded-lg text-[11px] font-black uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all disabled:opacity-30 border border-blue-100 dark:border-blue-800"
                 >
-                  COPY
+                  Copy
                 </button>
               </div>
-              <div className="bg-gray-50 p-3 rounded-lg min-h-[50px] break-words text-gray-800">
-                {res.value || 'Preview will appear here...'}
+              <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-xl min-h-[60px] break-words text-xl font-bold text-gray-950 dark:text-white leading-relaxed">
+                {res.value || <span className="text-gray-300 dark:text-gray-600 italic font-medium">Preview results...</span>}
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="bg-yellow-50 border border-yellow-100 p-6 rounded-2xl">
-        <h4 className="font-bold text-yellow-800 mb-2">Why use stylized text? 📈</h4>
-        <p className="text-sm text-yellow-700 opacity-90">
+      <div className="bg-amber-50 dark:bg-amber-900/30 border-2 border-amber-100 dark:border-amber-800 p-8 rounded-[2.5rem] transition-colors">
+        <h4 className="font-black text-xl text-amber-900 dark:text-amber-200 mb-4 flex items-center gap-3">
+          <span className="text-2xl">📈</span> Why use stylized text?
+        </h4>
+        <p className="text-lg text-amber-800 dark:text-amber-100 font-bold leading-relaxed">
           Standard Facebook posts don't support Markdown. Using special Unicode characters allows you to use 
           <b> bold</b> or <i>italic</i> styles to highlight your call-to-actions, hooks, or key information. 
-          This is a proven way to increase engagement!
+          This bypasses platform limitations and significantly boosts stop-power in the feed.
         </p>
       </div>
 

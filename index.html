@@ -6,11 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Swift FB Downloader - Facebook Utility Mega Tool</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: '#a5d7fb',
+              'brand-hover': '#8bc8f7',
+              'brand-dark': '#1e40af', // Keep a darker blue for high-contrast actions
+            },
+            screens: {
+              'xs': '475px',
+            }
+          }
+        }
+      }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
       body {
         font-family: 'Inter', sans-serif;
-        background: linear-gradient(135deg, #ffffff 0%, #eff6ff 50%, #dbeafe 100%);
+        background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 50%, #a5d7fb 100%);
         background-attachment: fixed;
         min-height: 100vh;
       }
@@ -22,7 +39,7 @@
         background: transparent;
       }
       ::-webkit-scrollbar-thumb {
-        background: #bfdbfe;
+        background: #a5d7fb;
         border-radius: 10px;
         border: 2px solid transparent;
         background-clip: content-box;
